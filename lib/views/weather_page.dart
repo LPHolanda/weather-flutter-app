@@ -31,20 +31,22 @@ class _WeatherPageState extends State<WeatherPage> {
           )
         )
       ),
-      body: Center(
-        child: Column(
-          children: [
-            CurrentWeatherWidget(
-              lat: cityScreenArguments.lat, 
-              lon: cityScreenArguments.lon
-            ),
-            ForecastWeatherWidget(
-              lat: cityScreenArguments.lat, 
-              lon: cityScreenArguments.lon
-            )
-          ]
-        )
-      ),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [
+              CurrentWeatherWidget(
+                lat: cityScreenArguments.lat, 
+                lon: cityScreenArguments.lon
+              ),
+              ForecastWeatherWidget(
+                lat: cityScreenArguments.lat, 
+                lon: cityScreenArguments.lon
+              )
+            ]
+          )
+        ),
+      )
     );
   }
 }

@@ -35,19 +35,21 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Center(child: Text(widget.title, style: const TextStyle(fontWeight: FontWeight.bold)))
       ),
-      body: Column(
-        children: [
-          const SizedBox(height: 10),
-          SearchField(
-            label: 'Search next concert city', 
-            cityScreenArgumentsList: cityScreenArgumentsList, 
-            updateFilteredList: updateFilteredList
-          ),
-          Expanded(
-            child: CitiesList(filtedList: cityScreenArgumentsFiltered)
-          )
-        ],
-      )
+      body: SafeArea(
+        child: Column(
+          children: [
+            const SizedBox(height: 10),
+            SearchField(
+              label: 'Search next concert city', 
+              cityScreenArgumentsList: cityScreenArgumentsList, 
+              updateFilteredList: updateFilteredList
+            ),
+            Expanded(
+              child: CitiesList(filtedList: cityScreenArgumentsFiltered)
+            )
+          ],
+        )
+      ) 
     );
   }
 }
